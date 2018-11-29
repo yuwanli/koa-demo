@@ -7,7 +7,7 @@ const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert');
 
 const mongoUrl = 'mongodb://127.0.0.1:27017';
-const dbName = 'test';
+const dbName = 'koa';
 
 // Create a new MongoClient
 const client = new MongoClient(mongoUrl);
@@ -31,7 +31,7 @@ app.use(cors({
 
 function getData() {
     return new Promise((resolve,reject)=> {
-        var result = Db.collection('test').find({})
+        var result = Db.collection('koa').find({})
         result.toArray((err,docs) => {
             resolve(docs)
         })
